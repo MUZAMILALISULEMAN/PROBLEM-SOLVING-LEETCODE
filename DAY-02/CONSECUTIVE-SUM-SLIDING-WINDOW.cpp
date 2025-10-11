@@ -21,7 +21,9 @@ int main(){
 	}
 	for(j=size;j<n;j++){
 	if(sum == t){
-		answers[size] += 1;
+		answers[size] += 1;  
+		
+		
 		flag = 1;
 	}
 	sum+= arr[j];
