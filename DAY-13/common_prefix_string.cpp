@@ -1,58 +1,28 @@
-#include<iostream>
-#include<vector>
-using namespace std;
-void display(const vector<int>& vec) {
-    cout << "Vector elements: ";
-    for (int val : vec) {
-        cout << val << " ";
-    }
-    cout << endl;
+class Solution {
+public:
+    string longestCommonPrefix(vector<string>& strs) {
+        string k = "";
+        int len = strs[0].length();
+        char c;
+        bool flag;
+           for(int i=0;i<len;i++){
+            flag = false;
+            if(i >= strs[0].length()) break;
+            c  = strs[0][i];
+
+    for(int j=0;j<strs.size();j++){
+            
+            if(i<strs[j].length() && strs[j][i] == c){
+                flag = true;
+                continue;
+            }
+            flag = false;
+            break;
+
+        }
+        if(!flag) break;
+        k+=c;
 }
-int main(){
-
-
-int arr[3] = {1,2,10};
-int arr2[1] = {6};
-vector<int>k;
-
-int i = 0;
-int j = 0;
-
-
-while (i < 3 && j<1)
-{
-
-if (arr[i] < arr2[j])
-{
-    k.push_back(arr[i++]);
-}else{
-    
-    k.push_back(arr2[j++]);
+        return k;
 }
-}
-while (i<3)
-{
-    k.push_back(arr[i++]);
-}
-while(j<1)
-{
-    k.push_back(arr2[j++]);
-}
-
-
-
-
-
-
-
-display(k);
-
-
-
-
-
-
-
-
-    return 0;
-}
+};
