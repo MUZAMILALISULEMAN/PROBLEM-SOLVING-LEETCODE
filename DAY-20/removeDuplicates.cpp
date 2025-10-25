@@ -18,9 +18,6 @@ public:
         count = 1;
 
     }else{
-        count++;
-    }
-    newNums.push_back(nums[nums.size() - 1]);
     nums = newNums;
     return count;
     }
